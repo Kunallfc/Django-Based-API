@@ -8,6 +8,7 @@ from django.db.models import Q
 from .serializers import BlogPostSerializer
 from postings.models import *
 from postings.models import BlogPost
+from .permissions import IsOwnerOrReadOnly
 class BlogPostRudView(generics.RetrieveUpdateDestroyAPIView):
     lookup_field      = 'pk'
     serializer_class  = BlogPostSerializer
